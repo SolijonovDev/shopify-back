@@ -1,6 +1,6 @@
-import { Servises } from '../servise/fetch-products.js';
+const Servises = require('../servise/fetch-products.js');
 
-export const ProductCon = {
+const ProductCon = {
   async getProducts(req, res) {
     try {
       const data = await Servises.fetchProducts();
@@ -11,3 +11,5 @@ export const ProductCon = {
     }
   },
 };
+
+module.exports = ProductCon;

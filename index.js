@@ -1,16 +1,15 @@
+require('dotenv').config();
 const express = require('express');
-// import routers from './routers/index.js';
+const cors = require('cors');
+const routers = require('./routers/index.js');
 
 const app = express();
-const PORT = 4200;
+const PORT = process.env.PORT || 4000;
 
-// app.use(express.json());
+app.use(cors());
+app.use(express.json());
 
-// app.use('/api', routers);
-
-app.get('/', (req, res) => {
-  res.send('all work');
-});
+app.use('/api', routers);
 
 const start = () => {
   app.listen(PORT, () => {
