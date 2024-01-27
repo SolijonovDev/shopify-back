@@ -1,9 +1,8 @@
-import dotenv from 'dotenv';
 import fetch from 'node-fetch';
 
-dotenv.config();
+const SHOPIFY_STORE_URL = 'https://cpb-new-developer.myshopify.com';
+const SHOPIFY_ACCESS_TOKEN = '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';
 
-const { SHOPIFY_STORE_URL, SHOPIFY_ACCESS_TOKEN } = process.env;
 // Shopify GraphQL endpoint
 const graphqlEndpoint = `${SHOPIFY_STORE_URL}/admin/api/2023-01/graphql.json`;
 
